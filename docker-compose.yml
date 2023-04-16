@@ -1,0 +1,7 @@
+services:
+  creamlinux-build:
+    build: .
+    container_name: creamlinux_build
+    volumes:
+      - .:/usr/src/creamlinux/
+    command: bash -c "sh ./build.sh && cd output && zip -r creamlinux.zip *"
